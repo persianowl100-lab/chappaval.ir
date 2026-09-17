@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>چاپ اول | فروشگاه تخصصی کتاب</title>
+    <meta name="description" content="چاپ اول - فروشگاه آنلاین کتاب سینا باقری، کارشناس ارشد روانشناسی تربیتی، پژوهشگر حقوق و رسانه">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --primary-dark: #0d3b4d;
+            --primary-light: #2a9d8f;
+            --accent: #e9c46a;
+            --accent-dark: #d4a84b;
+            --coral: #e76f51;
+            --bg: #f7f5f2;
+            --bg-card: #ffffff;
+            --text: #1d3557;
+            --text-muted: #6b7280;
+            --border: #e5e0d8;
+            --shadow: 0 8px 30px rgba(26, 95, 122, 0.08);
+            --shadow-hover: 0 20px 50px rgba(26, 95, 122, 0.15);
+            --radius: 16px;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== MARQUEE TOP BAR ========== */
+        .marquee-bar {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-light));
+            color: #fff;
+            font-size: 0.88rem;
+            font-weight: 500;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .marquee-track {
+            display: inline-flex;
+            animation: marquee-ltr 28s linear infinite;
+            will-change: transform;
+        }
+
+        .marquee-track span {
+            display: inline-block;
+            padding: 0 48px;
+        }
+
+        .marquee-track span::before {
+            content: "✦";
+            margin-left: 12px;
+            opacity: 0.7;
+        }
+
+        @keyframes marquee-ltr {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            gap: 16px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(145deg, var(--primary), var(--primary-light));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            box-shadow: 0 6px 18px rgba(26, 95, 122, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.15), transparent);
+            transform: rotate(25deg);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text strong {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Desktop Nav - hidden on mobile */
+        .nav-desktop {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-desktop a {
+            font-weight: 550;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 6px 0;
+            color: var(--text);
+        }
+
+        .nav-desktop a:hover,
+        .nav-desktop a.active {
+            color: var(--primary);
+        }
+
+        .nav-desktop a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 2.5px;
+            background: linear-gradient(90deg, var(--primary-light), var(--accent));
+            border-radius: 3px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--bg);
+            border-radius: 50px;
+            padding: 9px 16px;
+            border: 1.5px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 95, 122, 0.1);
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-family: inherit;
+            font-size: 0.88rem;
+            width: 160px;
+            color: var(--text);
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 24px;
+            border-radius: 50px;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(26, 95, 122, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(26, 95, 122, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(233, 196, 106, 0.4);
+        }
+
+        /* ========== HAMBURGER (Right side) ========== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+            width: 44px;
+            height: 44px;
+            background: var(--bg);
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1002;
+            transition: var(--transition);
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2.5px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .hamburger.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .hamburger.active span {
+            background: #fff;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8.5px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8.5px) rotate(-45deg);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: min(320px, 85vw);
+            height: 100vh;
+            background: var(--bg-card);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.12);
+            z-index: 1001;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 90px 28px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 14px 18px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 12px;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            background: rgba(26, 95, 122, 0.08);
+            color: var(--primary);
+            padding-right: 24px;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            background: linear-gradient(145deg, #0d3b4d 0%, #1a5f7a 40%, #2a9d8f 100%);
+            color: #fff;
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(233,196,106,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(42,157,143,0.25) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(90deg, var(--accent), #f4e4b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 500px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: 24px;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.15);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -22px;
+            right: 24px;
+            background: #fff;
+            color: var(--text);
+            padding: 16px 22px;
+            border-radius: 18px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hero-badge .icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .hero-badge strong {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .hero-badge span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ========== FEATURES ========== */
+        .features {
+            background: var(--bg-card);
+            padding: 50px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+            border-radius: 32px 32px 0 0;
+            box-shadow: 0 -15px 50px rgba(0,0,0,0.06);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 24px 16px;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            background: var(--bg);
+            transform: translateY(-4px);
+        }
+
+        .feature-item .icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 16px;
+            background: linear-gradient(145deg, rgba(26,95,122,0.1), rgba(42,157,143,0.15));
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover .icon {
+            background: linear-gradient(145deg, var(--primary), var(--primary-light));
+            color: #fff;
+            transform: scale(1.08);
+        }
+
+        .feature-item h4 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .feature-item p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* ========== SECTION COMMON ========== */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header .subtitle {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(26,95,122,0.1), rgba(42,157,143,0.12));
+            color: var(--primary);
+            padding: 7px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: 0.3px;
+        }
+
+        .section-header h2 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto;
+            font-size: 1.02rem;
+        }
+
+        /* ========== ABOUT ========== */
+        .about {
+            background: var(--bg-card);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 24px;
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image .frame {
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--accent);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .about-image .deco {
+            position: absolute;
+            bottom: 20px;
+            left: -20px;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            border-radius: 24px;
+            opacity: 0.9;
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+
+        .about-content .role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 22px;
+            font-size: 1.05rem;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            text-align: justify;
+            font-size: 0.98rem;
+        }
+
+        .credentials {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 28px 0;
+        }
+
+        .cred-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--bg);
+            padding: 16px;
+            border-radius: 14px;
+            border-right: 3.5px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .cred-item:hover {
+            transform: translateX(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .cred-item .icon {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-top: 2px;
+        }
+
+        .cred-item strong {
+            display: block;
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .cred-item span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ========== BOOKS ========== */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .book-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(26, 95, 122, 0.12);
+        }
+
+        .book-card .img-wrap {
+            position: relative;
+            height: 270px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #e8f0f0, #f0e8e0);
+        }
+
+        .book-card .img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .book-card:hover .img-wrap img {
+            transform: scale(1.08);
+        }
+
+        .book-card .badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--coral);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 50px;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 12px rgba(231, 111, 81, 0.3);
+        }
+
+        .book-card .badge.new {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            box-shadow: 0 4px 12px rgba(26, 95, 122, 0.3);
+        }
+
+        .book-card .content {
+            padding: 20px;
+        }
+
+        .book-card .category {
+            font-size: 0.75rem;
+            color: var(--primary-light);
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .book-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.45;
+            height: 2.9em;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .book-card .author {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .book-card .price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .book-card .price {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .book-card .price del {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-right: 6px;
+        }
+
+        .book-card .add-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(26, 95, 122, 0.08);
+            color: var(--primary);
+            border: none;
+            cursor: pointer;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .book-card .add-btn:hover {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* ========== CATEGORIES ========== */
+        .categories {
+            background: linear-gradient(180deg, var(--bg) 0%, #e8f4f2 100%);
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .cat-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 36px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--accent));
+            transform: scaleX(0);
+            transition: var(--transition);
+            transform-origin: right;
+        }
+
+        .cat-card:hover {
+            border-color: rgba(26, 95, 122, 0.15);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cat-card .icon {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 18px;
+            background: linear-gradient(145deg, var(--primary), var(--primary-light));
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #fff;
+            box-shadow: 0 10px 28px rgba(26, 95, 122, 0.25);
+            transition: var(--transition);
+        }
+
+        .cat-card:hover .icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .cat-card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .cat-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ========== CTA ========== */
+        .cta {
+            background: linear-gradient(145deg, var(--primary-dark), var(--primary) 50%, var(--primary-light));
+            color: #fff;
+            padding: 70px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(233,196,106,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 14px;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .cta p {
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #0a2a32;
+            color: #a8c5c9;
+            padding: 65px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 45px;
+        }
+
+        .footer h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 22px;
+            position: relative;
+            padding-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 36px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--primary-light));
+            border-radius: 3px;
+        }
+
+        .footer p {
+            font-size: 0.92rem;
+            line-height: 1.85;
+            margin-bottom: 18px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 11px;
+        }
+
+        .footer ul a:hover {
+            color: var(--accent);
+            padding-right: 8px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 13px;
+            font-size: 0.92rem;
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .socials a {
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .socials a:hover {
+            background: var(--primary-light);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding: 22px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .hero-content,
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+            .hero-text h1 {
+                font-size: 2.1rem;
+            }
+            .books-grid,
+            .features-grid,
+            .cat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .nav-desktop {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .search-box {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .books-grid,
+            .features-grid,
+            .cat-grid,
+            .credentials {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 55px 0 80px;
+            }
+            .hero-text h1 {
+                font-size: 1.75rem;
+            }
+            .section {
+                padding: 55px 0;
+            }
+            .logo-text strong {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Moving Marquee Top Bar -->
+    <div class="marquee-bar">
+        <div class="marquee-track">
+            <span>ارسال رایگان برای سفارش‌های بالای ۵۰۰ هزار تومان</span>
+            <span>ضمانت اصالت کالا و ۷ روز بازگشت وجه</span>
+            <span>پشتیبانی ۲۴ ساعته و مشاوره رایگان انتخاب کتاب</span>
+            <span>پرداخت در محل و تحویل سریع</span>
+            <span>ارسال رایگان برای سفارش‌های بالای ۵۰۰ هزار تومان</span>
+            <span>ضمانت اصالت کالا و ۷ روز بازگشت وجه</span>
+            <span>پشتیبانی ۲۴ ساعته و مشاوره رایگان انتخاب کتاب</span>
+            <span>پرداخت در محل و تحویل سریع</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-main">
+            <!-- Logo (Right side in RTL) -->
+            <a href="#" class="logo">
+                <div class="logo-icon">چ۱</div>
+                <div class="logo-text">
+                    <strong>چاپ اول</strong>
+                    <span>فروشگاه تخصصی کتاب</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav>
+                <ul class="nav-desktop">
+                    <li><a href="#" class="active">خانه</a></li>
+                    <li><a href="#books">کتاب‌ها</a></li>
+                    <li><a href="#about">درباره نویسنده</a></li>
+                    <li><a href="#categories">دسته‌بندی‌ها</a></li>
+                    <li><a href="#contact">تماس با ما</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="جستجوی کتاب...">
+                    <button aria-label="جستجو">🔍</button>
+                </div>
+                <a href="#" class="btn btn-primary">سبد خرید</a>
+
+                <!-- Hamburger Button (Top Right) -->
+                <button class="hamburger" id="hamburger" aria-label="منو" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="#" class="active">خانه</a>
+        <a href="#books">کتاب‌ها</a>
+        <a href="#about">درباره نویسنده</a>
+        <a href="#categories">دسته‌بندی‌ها</a>
+        <a href="#contact">تماس با ما</a>
+        <a href="#" style="margin-top:20px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;text-align:center;">سبد خرید</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>کتاب‌هایی برای <span>رشد ذهن</span> و ساختن آینده</h1>
+                <p>
+                    به فروشگاه «چاپ اول» خوش آمدید. اینجا مجموعه‌ای از بهترین کتاب‌های روانشناسی تربیتی، حقوق، رسانه و معارف را با ضمانت اصالت و ارسال سریع پیدا می‌کنید.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#books" class="btn btn-accent">مشاهده کتاب‌ها</a>
+                    <a href="#about" class="btn" style="border:2px solid rgba(255,255,255,0.5);color:#fff;background:transparent;">آشنایی با نویسنده</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&q=80" alt="قفسه کتاب‌های تخصصی چاپ اول">
+                <div class="hero-badge">
+                    <div class="icon">📚</div>
+                    <div>
+                        <strong>+۲۵۰ عنوان</strong>
+                        <span>کتاب تخصصی و عمومی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon">🛡️</div>
+                    <h4>ضمانت اصالت کالا</h4>
+                    <p>تمام کتاب‌ها اصل و با مجوز رسمی</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🔄</div>
+                    <h4>۷ روز ضمانت بازگشت</h4>
+                    <p>بدون قید و شرط در صورت نارضایتی</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🚚</div>
+                    <h4>ارسال سریع</h4>
+                    <p>تحویل در کوتاه‌ترین زمان ممکن</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💬</div>
+                    <h4>پشتیبانی ۲۴ ساعته</h4>
+                    <p>مشاوره رایگان انتخاب کتاب</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Author -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="سینا باقری - نویسنده و پژوهشگر">
+                    <div class="frame"></div>
+                    <div class="deco"></div>
+                </div>
+                <div class="about-content">
+                    <span class="subtitle">صاحب امتیاز و نویسنده</span>
+                    <h2>سینا باقری</h2>
+                    <p class="role">کارشناس ارشد روانشناسی تربیتی · دانش‌پژوه دکتری حقوق</p>
+                    <p>
+                        سینا باقری، نویسنده، پژوهشگر حوزه رسانه و استاد حوزه و دانشگاه است. با تلفیق دانش روانشناسی تربیتی و حقوق، آثار او بر رشد فردی، تربیت نسل آینده و مسئولیت‌پذیری اجتماعی تمرکز دارد.
+                    </p>
+                    <p>
+                        بیش از یک دهه فعالیت در تدریس، پژوهش و تولید محتوای رسانه‌ای، او را به مرجعی قابل اعتماد برای علاقه‌مندان به کتاب‌های تخصصی و کاربردی تبدیل کرده است.
+                    </p>
+                    <div class="credentials">
+                        <div class="cred-item">
+                            <span class="icon">🎓</span>
+                            <div>
+                                <strong>کارشناس ارشد</strong>
+                                <span>روانشناسی تربیتی</span>
+                            </div>
+                        </div>
+                        <div class="cred-item">
+                            <span class="icon">⚖️</span>
+                            <div>
+                                <strong>دانش‌پژوه دکتری</strong>
+                                <span>حقوق</span>
+                            </div>
+                        </div>
+                        <div class="cred-item">
+                            <span class="icon">📡</span>
+                            <div>
+                                <strong>پژوهشگر</strong>
+                                <span>حوزه رسانه</span>
+                            </div>
+                        </div>
+                        <div class="cred-item">
+                            <span class="icon">👨‍🏫</span>
+                            <div>
+                                <strong>استاد</strong>
+                                <span>حوزه و دانشگاه</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#books" class="btn btn-primary">مشاهده آثار</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Books -->
+    <section class="section" id="books">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">منتخب کتاب‌ها</span>
+                <h2>جدیدترین و پرفروش‌ترین‌ها</h2>
+                <p>مجموعه‌ای از بهترین کتاب‌های تخصصی در حوزه‌های روانشناسی، حقوق، رسانه و تربیت</p>
+            </div>
+
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="img-wrap">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&q=80" alt="روانشناسی تربیتی کاربردی">
+                        <span class="badge new">جدید</span>
+                    </div>
+                    <div class="content">
+                        <div class="category">روانشناسی تربیتی</div>
+                        <h3>روانشناسی تربیتی کاربردی در عصر دیجیتال</h3>
+                        <div class="author">سینا باقری</div>
+                        <div class="price-row">
+                            <div class="price">۱۸۵,۰۰۰ <del>۲۲۰,۰۰۰</del></div>
+                            <button class="add-btn" title="افزودن به سبد">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="img-wrap">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?w=400&q=80" alt="مبانی حقوق رسانه">
+                        <span class="badge">پرفروش</span>
+                    </div>
+                    <div class="content">
+                        <div class="category">حقوق و رسانه</div>
+                        <h3>مبانی حقوق رسانه و مسئولیت اجتماعی</h3>
+                        <div class="author">سینا باقری</div>
+                        <div class="price-row">
+                            <div class="price">۱۶۵,۰۰۰</div>
+                            <button class="add-btn" title="افزودن به سبد">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="img-wrap">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&q=80" alt="تربیت نسل آینده">
+                    </div>
+                    <div class="content">
+                        <div class="category">تربیت و خانواده</div>
+                        <h3>تربیت نسل آینده: از خانه تا جامعه</h3>
+                        <div class="author">سینا باقری</div>
+                        <div class="price-row">
+                            <div class="price">۱۴۵,۰۰۰</div>
+                            <button class="add-btn" title="افزودن به سبد">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="img-wrap">
+                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&q=80" alt="رسانه و هویت">
+                        <span class="badge new">جدید</span>
+                    </div>
+                    <div class="content">
+                        <div class="category">رسانه و فرهنگ</div>
+                        <h3>رسانه، هویت و مسئولیت‌پذیری</h3>
+                        <div class="author">سینا باقری</div>
+                        <div class="price-row">
+                            <div class="price">۱۲۵,۰۰۰ <del>۱۵۰,۰۰۰</del></div>
+                            <button class="add-btn" title="افزودن به سبد">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="img-wrap">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e1bd725?w=400&q=80" alt="حقوق کودک">
+                    </div>
+                    <div class="content">
+                        <div class="category">حقوق</div>
+                        <h3>حقوق کودک و نوجوان در نظام آموزشی</h3>
+                        <div class="author">سینا باقری</div>
+                        <div class="price-row">
+                            <div class="price">۱۹۵,۰۰۰</div>
+                            <button class="add-btn" title="افزودن به سبد">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="img-wrap">
+                        <img src="https://images.unsplash.com/photo-1456513080080-e4c9a9c5b4a5?w=400&q=80" alt="یادگیری عمیق">
+                    </div>
+                    <div class="content">
+                        <div class="category">روانشناسی</div>
+                        <h3>یادگیری عمیق و انگیزش در دانش‌آموزان</h3>
+                        <div class="author">سینا باقری</div>
+                        <div class="price-row">
+                            <div class="price">۱۳۵,۰۰۰</div>
+                            <button class="add-btn" title="افزودن به سبد">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="img-wrap">
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&q=80" alt="اخلاق حرفه‌ای">
+                        <span class="badge">پرفروش</span>
+                    </div>
+                    <div class="content">
+                        <div class="category">اخلاق و حقوق</div>
+                        <h3>اخلاق حرفه‌ای در فضای رسانه‌ای</h3>
+                        <div class="author">سینا باقری</div>
+                        <div class="price-row">
+                            <div class="price">۱۱۰,۰۰۰</div>
+                            <button class="add-btn" title="افزودن به سبد">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="img-wrap">
+                        <img src="https://images.unsplash.com/photo-1519682337058-a52d3ffada7c?w=400&q=80" alt="تفکر انتقادی">
+                    </div>
+                    <div class="content">
+                        <div class="category">تربیت فکری</div>
+                        <h3>تفکر انتقادی برای نسل جدید</h3>
+                        <div class="author">سینا باقری</div>
+                        <div class="price-row">
+                            <div class="price">۹۵,۰۰۰</div>
+                            <button class="add-btn" title="افزودن به سبد">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:45px;">
+                <a href="#" class="btn btn-outline">مشاهده همه کتاب‌ها</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">دسته‌بندی‌ها</span>
+                <h2>موضوعات اصلی</h2>
+                <p>کتاب‌ها را بر اساس حوزه تخصصی مورد علاقه خود انتخاب کنید</p>
+            </div>
+
+            <div class="cat-grid">
+                <a href="#" class="cat-card">
+                    <div class="icon">🧠</div>
+                    <h3>روانشناسی تربیتی</h3>
+                    <p>۴۲ عنوان</p>
+                </a>
+                <a href="#" class="cat-card">
+                    <div class="icon">⚖️</div>
+                    <h3>حقوق و فقه</h3>
+                    <p>۳۸ عنوان</p>
+                </a>
+                <a href="#" class="cat-card">
+                    <div class="icon">📡</div>
+                    <h3>رسانه و فرهنگ</h3>
+                    <p>۲۹ عنوان</p>
+                </a>
+                <a href="#" class="cat-card">
+                    <div class="icon">👨‍👩‍👧‍👦</div>
+                    <h3>تربیت و خانواده</h3>
+                    <p>۵۱ عنوان</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>آماده انتخاب کتاب بعدی خود هستید؟</h2>
+            <p>با خرید از چاپ اول، علاوه بر دسترسی به آثار تخصصی، از مشاوره رایگان و ضمانت بازگشت ۷ روزه بهره‌مند شوید.</p>
+            <a href="#books" class="btn btn-accent">شروع خرید</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>چاپ اول</h4>
+                    <p>
+                        فروشگاه آنلاین تخصصی کتاب با تمرکز بر حوزه‌های روانشناسی تربیتی، حقوق، رسانه و تربیت. هدف ما ارائه کتاب‌های اصیل و کاربردی برای رشد فردی و اجتماعی است.
+                    </p>
+                    <div class="socials">
+                        <a href="#" title="اینستاگرام">📷</a>
+                        <a href="#" title="تلگرام">✈️</a>
+                        <a href="#" title="ایتا">💬</a>
+                        <a href="#" title="آپارات">▶️</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>دسترسی سریع</h4>
+                    <ul>
+                        <li><a href="#">صفحه اصلی</a></li>
+                        <li><a href="#books">همه کتاب‌ها</a></li>
+                        <li><a href="#about">درباره نویسنده</a></li>
+                        <li><a href="#categories">دسته‌بندی‌ها</a></li>
+                        <li><a href="#">قوانین و مقررات</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>خدمات مشتریان</h4>
+                    <ul>
+                        <li><a href="#">پیگیری سفارش</a></li>
+                        <li><a href="#">راهنمای خرید</a></li>
+                        <li><a href="#">شرایط بازگشت</a></li>
+                        <li><a href="#">سوالات متداول</a></li>
+                        <li><a href="#">تماس با پشتیبانی</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تماس با ما</h4>
+                    <ul class="footer-contact">
+                        <li>📍 تهران، ایران</li>
+                        <li>📞 ۰۲۱-۱۲۳۴۵۶۷۸</li>
+                        <li>✉️ info@chapavval.ir</li>
+                        <li>🕐 ۷ روز هفته، ۲۴ ساعته</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                © ۱۴۰۴ چاپ اول — تمامی حقوق محفوظ است. | طراحی و توسعه با ❤️
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('open');
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            mobileOverlay.classList.toggle('show');
+            hamburger.setAttribute('aria-expanded', !isOpen);
+            document.body.style.overflow = isOpen ? '' : 'hidden';
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
