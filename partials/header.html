@@ -1,0 +1,136 @@
+<!-- Top Blue Line -->
+    <div class="top-bar"></div>
+
+    <!-- Orange Promo Banner (Moving) -->
+    <div class="promo-banner">
+        <div class="marquee-inner">چهار قسط، بدون کارمزد ✦ ارسال رایگان بالای ۵۰۰ هزار تومان ✦ ضمانت اصالت کالا</div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-main">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <div class="logo-img">چ۱</div>
+                    <div class="logo-text">
+                        <strong>چاپ اول</strong>
+                        <span>فروشگاه تخصصی کتاب</span>
+                    </div>
+                </a>
+
+                <!-- Search + Location -->
+                <div class="header-center">
+                    <div class="search-wrap">
+                        <select>
+                            <option>کل سایت</option>
+                            <option>کتاب</option>
+                            <option>مقالات</option>
+                        </select>
+                        <input type="text" placeholder="جستجو در کل سایت">
+                        <button>🔍</button>
+                    </div>
+                    <span class="location-btn">🚚 ارسال به سراسر ایران</span>
+                </div>
+
+                <!-- Actions -->
+                <div class="header-actions">
+                    <button class="login-btn">👤 <span>ورود / عضویت</span></button>
+                    <button class="icon-btn" title="سبد خرید">🛒 <span class="badge-count">0</span></button>
+                    <button class="hamburger" id="hamburger" aria-label="منو">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Secondary Nav with Dropdowns -->
+            <nav class="nav-secondary">
+                <!-- دسته بندی‌ها -->
+                <div class="nav-item" data-dropdown>
+                    <button type="button">دسته بندی‌ها <span class="arrow">▼</span></button>
+                    <div class="dropdown">
+                        <a href="category.html?cat=psychology">روانشناسی تربیتی</a>
+                        <a href="category.html?cat=law">حقوق و فقه</a>
+                        <a href="category.html?cat=media">رسانه و فرهنگ</a>
+                        <a href="category.html?cat=family">تربیت و خانواده</a>
+                        <div class="divider"></div>
+                        <a href="category.html?cat=story">داستان و رمان</a>
+                        <a href="category.html?cat=history">تاریخ</a>
+                        <a href="category.html?cat=lifestyle">سبک زندگی</a>
+                        <a href="category.html">همه دسته‌ها ←</a>
+                    </div>
+                </div>
+
+                <!-- وبلاگ -->
+                <div class="nav-item" data-dropdown>
+                    <button type="button">وبلاگ <span class="arrow">▼</span></button>
+                    <div class="dropdown">
+                        <a href="blog.html">همه مقالات</a>
+                        <a href="blog.html?tag=intro">معرفی کتاب</a>
+                        <a href="blog.html?tag=review">نقد و بررسی</a>
+                        <a href="blog.html?tag=guide">راهنمای خواندن</a>
+                    </div>
+                </div>
+
+                <!-- درباره ما -->
+                <div class="nav-item" data-dropdown>
+                    <button type="button">درباره ما <span class="arrow">▼</span></button>
+                    <div class="dropdown">
+                        <a href="about.html">معرفی چاپ اول</a>
+                        <a href="about.html#author">درباره نویسنده</a>
+                        <a href="contact.html">تماس با ما</a>
+                        <a href="faq.html">سوالات متداول</a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="contact.html">تماس با ما</a>
+                </div>
+                <div class="nav-item">
+                    <a href="shop.html">کتاب‌ها</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="overlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html">خانه</a>
+        <a href="shop.html">کتاب‌ها</a>
+
+        <div class="mobile-accordion">
+            <button type="button" class="acc-btn">دسته بندی‌ها <span>▼</span></button>
+            <div class="acc-panel">
+                <a href="category.html?cat=psychology">روانشناسی تربیتی</a>
+                <a href="category.html?cat=law">حقوق و فقه</a>
+                <a href="category.html?cat=media">رسانه و فرهنگ</a>
+                <a href="category.html?cat=family">تربیت و خانواده</a>
+                <a href="category.html?cat=story">داستان و رمان</a>
+                <a href="category.html?cat=history">تاریخ</a>
+                <a href="category.html">همه دسته‌ها</a>
+            </div>
+        </div>
+
+        <div class="mobile-accordion">
+            <button type="button" class="acc-btn">وبلاگ <span>▼</span></button>
+            <div class="acc-panel">
+                <a href="blog.html">همه مقالات</a>
+                <a href="blog.html?tag=intro">معرفی کتاب</a>
+                <a href="blog.html?tag=review">نقد و بررسی</a>
+                <a href="blog.html?tag=guide">راهنمای خواندن</a>
+            </div>
+        </div>
+
+        <div class="mobile-accordion">
+            <button type="button" class="acc-btn">درباره ما <span>▼</span></button>
+            <div class="acc-panel">
+                <a href="about.html">معرفی چاپ اول</a>
+                <a href="about.html#author">درباره نویسنده</a>
+                <a href="faq.html">سوالات متداول</a>
+            </div>
+        </div>
+
+        <a href="contact.html">تماس با ما</a>
+        <a href="cart.html" style="margin-top:16px;background:var(--blue);color:#fff;text-align:center;">سبد خرید</a>
+    </nav>
