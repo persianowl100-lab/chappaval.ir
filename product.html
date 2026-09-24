@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جزئیات کتاب | چاپ اول</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<!-- Top Blue Line -->
+    <div class="top-bar"></div>
+
+    <!-- Orange Promo Banner (Moving) -->
+    <div class="promo-banner">
+        <div class="marquee-inner">چهار قسط، بدون کارمزد ✦ ارسال رایگان بالای ۵۰۰ هزار تومان ✦ ضمانت اصالت کالا</div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-main">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <div class="logo-img">چ۱</div>
+                    <div class="logo-text">
+                        <strong>چاپ اول</strong>
+                        <span>فروشگاه تخصصی کتاب</span>
+                    </div>
+                </a>
+
+                <!-- Search + Location -->
+                <div class="header-center">
+                    <div class="search-wrap">
+                        <select>
+                            <option>کل سایت</option>
+                            <option>کتاب</option>
+                            <option>مقالات</option>
+                        </select>
+                        <input type="text" placeholder="جستجو در کل سایت">
+                        <button>🔍</button>
+                    </div>
+                    <span class="location-btn">🚚 ارسال به سراسر ایران</span>
+                </div>
+
+                <!-- Actions -->
+                <div class="header-actions">
+                    <button class="login-btn">👤 <span>ورود / عضویت</span></button>
+                    <button class="icon-btn" title="سبد خرید">🛒 <span class="badge-count">0</span></button>
+                    <button class="hamburger" id="hamburger" aria-label="منو">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Secondary Nav with Dropdowns -->
+            <nav class="nav-secondary">
+                <!-- دسته بندی‌ها -->
+                <div class="nav-item" data-dropdown>
+                    <button type="button">دسته بندی‌ها <span class="arrow">▼</span></button>
+                    <div class="dropdown">
+                        <a href="category.html?cat=psychology">روانشناسی تربیتی</a>
+                        <a href="category.html?cat=law">حقوق و فقه</a>
+                        <a href="category.html?cat=media">رسانه و فرهنگ</a>
+                        <a href="category.html?cat=family">تربیت و خانواده</a>
+                        <div class="divider"></div>
+                        <a href="category.html?cat=story">داستان و رمان</a>
+                        <a href="category.html?cat=history">تاریخ</a>
+                        <a href="category.html?cat=lifestyle">سبک زندگی</a>
+                        <a href="category.html">همه دسته‌ها ←</a>
+                    </div>
+                </div>
+
+                <!-- وبلاگ -->
+                <div class="nav-item" data-dropdown>
+                    <button type="button">وبلاگ <span class="arrow">▼</span></button>
+                    <div class="dropdown">
+                        <a href="blog.html">همه مقالات</a>
+                        <a href="blog.html?tag=intro">معرفی کتاب</a>
+                        <a href="blog.html?tag=review">نقد و بررسی</a>
+                        <a href="blog.html?tag=guide">راهنمای خواندن</a>
+                    </div>
+                </div>
+
+                <!-- درباره ما -->
+                <div class="nav-item" data-dropdown>
+                    <button type="button">درباره ما <span class="arrow">▼</span></button>
+                    <div class="dropdown">
+                        <a href="about.html">معرفی چاپ اول</a>
+                        <a href="about.html#author">درباره نویسنده</a>
+                        <a href="contact.html">تماس با ما</a>
+                        <a href="faq.html">سوالات متداول</a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="contact.html">تماس با ما</a>
+                </div>
+                <div class="nav-item">
+                    <a href="shop.html">کتاب‌ها</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="overlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html">خانه</a>
+        <a href="shop.html">کتاب‌ها</a>
+
+        <div class="mobile-accordion">
+            <button type="button" class="acc-btn">دسته بندی‌ها <span>▼</span></button>
+            <div class="acc-panel">
+                <a href="category.html?cat=psychology">روانشناسی تربیتی</a>
+                <a href="category.html?cat=law">حقوق و فقه</a>
+                <a href="category.html?cat=media">رسانه و فرهنگ</a>
+                <a href="category.html?cat=family">تربیت و خانواده</a>
+                <a href="category.html?cat=story">داستان و رمان</a>
+                <a href="category.html?cat=history">تاریخ</a>
+                <a href="category.html">همه دسته‌ها</a>
+            </div>
+        </div>
+
+        <div class="mobile-accordion">
+            <button type="button" class="acc-btn">وبلاگ <span>▼</span></button>
+            <div class="acc-panel">
+                <a href="blog.html">همه مقالات</a>
+                <a href="blog.html?tag=intro">معرفی کتاب</a>
+                <a href="blog.html?tag=review">نقد و بررسی</a>
+                <a href="blog.html?tag=guide">راهنمای خواندن</a>
+            </div>
+        </div>
+
+        <div class="mobile-accordion">
+            <button type="button" class="acc-btn">درباره ما <span>▼</span></button>
+            <div class="acc-panel">
+                <a href="about.html">معرفی چاپ اول</a>
+                <a href="about.html#author">درباره نویسنده</a>
+                <a href="faq.html">سوالات متداول</a>
+            </div>
+        </div>
+
+        <a href="contact.html">تماس با ما</a>
+        <a href="cart.html" style="margin-top:16px;background:var(--blue);color:#fff;text-align:center;">سبد خرید</a>
+    </nav>
+
+<section class="section">
+  <div class="container">
+    <div class="about-section" style="grid-template-columns:0.9fr 1.1fr">
+      <div>
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500&q=80" alt="جلد کتاب" style="border-radius:16px;width:100%;max-height:420px;object-fit:cover">
+      </div>
+      <div>
+        <div style="color:var(--blue);font-weight:700;margin-bottom:8px">روانشناسی تربیتی</div>
+        <h2 style="margin-bottom:12px">روانشناسی تربیتی کاربردی در عصر دیجیتال</h2>
+        <p style="color:var(--text-muted);margin-bottom:16px">نویسنده: سینا باقری</p>
+        <div style="margin-bottom:20px;font-size:1.3rem">
+          <span style="color:var(--blue);font-weight:800">۱۸۵,۰۰۰ تومان</span>
+          <span style="text-decoration:line-through;color:#999;margin-right:10px">۲۲۰,۰۰۰</span>
+        </div>
+        <p style="text-align:justify;margin-bottom:20px">این کتاب به کاربرد روانشناسی تربیتی در محیط‌های یادگیری دیجیتال می‌پردازد و راهکارهای عملی برای معلمان، والدین و پژوهشگران ارائه می‌دهد.</p>
+        <a href="cart.html" class="btn btn-blue">افزودن به سبد خرید</a>
+        <a href="shop.html" class="btn btn-outline-blue" style="margin-right:8px">بازگشت به فروشگاه</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>چاپ اول</h4>
+                    <p>فروشگاه آنلاین تخصصی کتاب با تمرکز بر روانشناسی تربیتی، حقوق، رسانه و تربیت. مدیریت: سینا باقری.</p>
+                    <div class="socials">
+                        <a href="#">📷</a>
+                        <a href="#">✈️</a>
+                        <a href="#">💬</a>
+                        <a href="#">▶️</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>دسترسی سریع</h4>
+                    <ul>
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="shop.html">همه کتاب‌ها</a></li>
+                        <li><a href="about.html">درباره نویسنده</a></li>
+                        <li><a href="blog.html">وبلاگ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>خدمات مشتریان</h4>
+                    <ul>
+                        <li><a href="faq.html">پیگیری سفارش</a></li>
+                        <li><a href="faq.html">راهنمای خرید</a></li>
+                        <li><a href="terms.html">شرایط بازگشت</a></li>
+                        <li><a href="faq.html">سوالات متداول</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تماس با ما</h4>
+                    <ul>
+                        <li>🚚 ارسال به سراسر ایران</li>
+                        <li>📞 ۰۲۱-۱۲۳۴۵۶۷۸</li>
+                        <li>✉️ info@chapavval.ir</li>
+                        <li>🕐 ۷ روز هفته، ۲۴ ساعته</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">© ۱۴۰۴ چاپ اول — تمامی حقوق محفوظ است</div>
+        </div>
+    </footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
